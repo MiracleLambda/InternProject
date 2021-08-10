@@ -15,11 +15,11 @@ void swap2(int* _a, int* _b) {
 
 int main() {
 	int a, b;
-	cout << "Nhap 2 so: ";
+	cout << "Input 2 numbers: ";
 	cin >> a >> b;
 	// swap1(a, b);
 	swap2(&a, &b);
-	cout << "Gia tri moi la: a = ";
-	cout << a << " va b = " << b;
+	cout << "New value after swapping: a = ";
+	cout << a << " and b = " << b;
 	return 1;
 }
