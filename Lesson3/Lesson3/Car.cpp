@@ -1,11 +1,7 @@
 #include "Car.h"
 Car::Car() {}
 Car::~Car() {}
-Car::Car(int _oid, string _name, float _posX, float _posY) {
-	this->oid = _oid;
-	this->name = _name;
-	this->position[0] = _posX;
-	this->position[1] = _posY;
+Car::Car(int _oid, string _name, float _posX, float _posY) : DynamicObject(_oid, _name, _posX, _posY) {
 }
 int Car::getId() {
 	return this->oid;
@@ -14,9 +10,9 @@ string Car::getName() {
 	return this->name;
 }
 void Car::move(float _x, float _y) {
-	position[0] = _x;
-	position[1] = _y;
+	posX = _x;
+	posY = _y;
 }
 void Car::printPosition() {
-	cout << "Position of " << getName() << " is: (" << position[0] << ", " << position[1] << ").\n";
+	cout << "\tPosition of " << getName() << " is: (" << posX << ", " << posY << ").\n";
 }

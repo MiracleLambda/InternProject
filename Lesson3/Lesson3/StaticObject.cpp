@@ -1,10 +1,6 @@
 #include "StaticObject.h"
 StaticObject::StaticObject() {}
-StaticObject::StaticObject(int _oid, string _name, float _posX, float _posY) {
-	this->oid = _oid;
-	this->name = _name;
-	this->position[0] = _posX;
-	this->position[1] = _posY;
+StaticObject::StaticObject(int _oid, string _name, float _posX, float _posY) : BaseObject(_oid, _name, _posX, _posY) {
 }
 //int staticobject::getId() {
 //	return this->oid;
