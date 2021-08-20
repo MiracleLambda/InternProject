@@ -13,19 +13,8 @@ public:
 		s = new OpenState();
 	}
 	~StateContext() {};
-	int getStateCount() {
-		return m_stateCount;
-	}
-
-	void setState(State* newState) {
-		State* toDel = s;
-		s = newState;
-		delete toDel;
-		m_stateCount++;
-	}
-
-	void printState() {
-		s->printState(this);
-	}
+	int getStateCount();
+	void setState(State* newState);
+	void printState();
 };
 
