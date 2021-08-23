@@ -35,7 +35,7 @@ void GSMenu::Init()
 	m_listButton.push_back(button);
 	
 	// credit button
-	texture = ResourceManagers::GetInstance()->GetTexture("btn_info.tga");
+	texture = ResourceManagers::GetInstance()->GetTexture("btn_credit.tga");
 	button = std::make_shared<GameButton>(model, shader, texture);
 	button->Set2DPosition(Globals::screenWidth / 2, 680);
 	button->SetSize(50, 50);
