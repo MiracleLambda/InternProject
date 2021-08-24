@@ -57,7 +57,7 @@ void GSMenu::Init()
 	// game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("Stupendous Jack.ttf");
-	m_textGameName = std::make_shared<Text>(shader, font, "Ciel da Taverne", TextColor::GREEN, 3.0f);
+	m_textGameName = std::make_shared<Text>(shader, font, "Taverne da Ciel", TextColor::GREEN, 3.0f);
 	m_textGameName->Set2DPosition(Vector2(390, 200));
 }
 
