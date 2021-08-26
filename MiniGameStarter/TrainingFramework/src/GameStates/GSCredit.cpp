@@ -25,20 +25,20 @@ void GSCredit::Init()
 	m_background->SetSize(Globals::screenWidth, Globals::screenHeight);
 
 	// close button
-	texture = ResourceManagers::GetInstance()->GetTexture("btn_close.tga");
+	texture = ResourceManagers::GetInstance()->GetTexture("btn_exit.tga");
 	std::shared_ptr<GameButton>  button = std::make_shared<GameButton>(model, shader, texture);
 	button->Set2DPosition(Globals::screenWidth - 50, 50);
-	button->SetSize(50, 50);
+	button->SetSize(75, 75);
 	button->SetOnClick([]() {
 		GameStateMachine::GetInstance()->PopState();
 		});
 	m_listButton.push_back(button);
 
-	// game title
+	// menu title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
-	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("Stupendous Jack.ttf");
-	m_textGameName = std::make_shared<Text>(shader, font, "Credit", TextColor::GREEN, 3.0f);
-	m_textGameName->Set2DPosition(Vector2(550, 165));
+	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("BlackCloverFont.ttf");
+	m_textGameName = std::make_shared<Text>(shader, font, "Credit", TextColor::BLACK, 3.0f);
+	m_textGameName->Set2DPosition(Vector2(580, 100));
 }
 
 void GSCredit::Exit()
