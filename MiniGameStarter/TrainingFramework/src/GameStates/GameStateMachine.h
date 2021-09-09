@@ -11,6 +11,7 @@ enum class StateType
 	STATE_INTRO,
 	STATE_MENU,
 	STATE_CREDIT,
+	STATE_ENDGAME,
 	STATE_PLAY
 };
 

@@ -16,6 +16,7 @@ public:
 	void	Resume() override;
 
 	void	HandleEvents() override;
+	void	HandleCollisionEnter() override;
 	void	HandleKeyEvents(int key, bool bIsPressed) override;
 	void	HandleTouchEvents(int x, int y, bool bIsPressed) override;
 	void	HandleMouseMoveEvents(int x, int y) override;
@@ -25,6 +26,5 @@ public:
 private:
 	std::shared_ptr<Sprite2D>				m_background;
 	std::list<std::shared_ptr<GameButton>>	m_listButton;
-	std::shared_ptr<Text>					m_textGameName;
-
+	std::shared_ptr<Text>					m_label;
 };

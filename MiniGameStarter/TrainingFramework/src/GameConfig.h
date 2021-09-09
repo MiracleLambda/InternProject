@@ -95,5 +95,7 @@ public:
 #define KEY_MOVE_RIGHT		1 << 6
 #define KEY_MOVE_FORWORD	1 << 7
 #define KEY_MOVE_BACKWORD	1 << 8
-
+#define KEY_J				1 << 9
+#define KEY_K				1 << 10
+#define KEY_L				1 << 11
 #endif

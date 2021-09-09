@@ -14,6 +14,7 @@ public:
 	void	Resume() override;
 
 	void	HandleEvents() override;
+	void	HandleCollisionEnter() override;
 	void	HandleKeyEvents(int key, bool bIsPressed) override;
 	void	HandleTouchEvents(int x, int y, bool bIsPressed) override;
 	void	HandleMouseMoveEvents(int x, int y) override;

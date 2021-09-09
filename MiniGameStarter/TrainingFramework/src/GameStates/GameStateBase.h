@@ -1,6 +1,7 @@
 #pragma once
 #include "GameStateMachine.h"
 #include "GameManager/ResourceManagers.h"
+#include "GameManager/ScoreManager.h"
 
 
 class GameStateBase
@@ -17,6 +18,7 @@ public:
 	virtual void Resume() = 0;
 
 	virtual void HandleEvents() = 0;
+	virtual void HandleCollisionEnter() = 0;
 	virtual void HandleKeyEvents(int key, bool bIsPressed) = 0;
 	virtual void HandleTouchEvents(int x, int y, bool bIsPressed) = 0;
 	virtual void HandleMouseMoveEvents(int x, int y) = 0;

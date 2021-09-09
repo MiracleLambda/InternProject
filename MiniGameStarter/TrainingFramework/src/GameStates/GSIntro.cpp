@@ -39,6 +39,10 @@ void GSIntro::HandleEvents()
 {
 }
 
+void GSIntro::HandleCollisionEnter()
+{
+}
+
 void GSIntro::HandleKeyEvents(int key, bool bIsPressed)
 {
 }

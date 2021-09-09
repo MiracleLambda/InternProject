@@ -1,4 +1,7 @@
 #include "GSMenu.h"
+#include <mmsystem.h>
+#include <mciapi.h>
+#pragma comment(lib, "winmm.lib")
 #include "Camera.h"
 
 GSMenu::GSMenu() : GameStateBase(StateType::STATE_MENU),
@@ -15,6 +18,8 @@ GSMenu::~GSMenu()
 
 void GSMenu::Init()
 {
+	/*mciSendString("open \"D:/Lambda/GL Intern Project/InternProject/MiniGameStarter/Data/Music/retrosoul.mp3\" type mpegvideo alias mp3", NULL, 0, NULL);
+	mciSendString("play mp3", NULL, 0, NULL);*/
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D.nfg");
 	auto texture = ResourceManagers::GetInstance()->GetTexture("bg_main_menu.tga");
 
@@ -90,6 +95,10 @@ void GSMenu::Resume()
 
 
 void GSMenu::HandleEvents()
+{
+}
+
+void GSMenu::HandleCollisionEnter()
 {
 }
 

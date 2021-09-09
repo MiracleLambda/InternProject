@@ -2,7 +2,7 @@
 #include "Camera.h"
 
 GSCredit::GSCredit() : GameStateBase(StateType::STATE_CREDIT),
-m_background(nullptr), m_listButton(std::list<std::shared_ptr<GameButton>>{}), m_textGameName(nullptr)
+m_background(nullptr), m_listButton(std::list<std::shared_ptr<GameButton>>{}), m_label(nullptr)
 {
 }
 
@@ -37,8 +37,8 @@ void GSCredit::Init()
 	// menu title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("BlackCloverFont.ttf");
-	m_textGameName = std::make_shared<Text>(shader, font, "Credit", TextColor::BLACK, 3.0f);
-	m_textGameName->Set2DPosition(Vector2(580, 100));
+	m_label = std::make_shared<Text>(shader, font, "Credit", TextColor::BLACK, 3.0f);
+	m_label->Set2DPosition(Vector2(580, 90));
 }
 
 void GSCredit::Exit()
@@ -56,6 +56,10 @@ void GSCredit::Resume()
 
 
 void GSCredit::HandleEvents()
+{
+}
+
+void GSCredit::HandleCollisionEnter()
 {
 }
 
@@ -94,5 +98,5 @@ void GSCredit::Draw()
 	{
 		it->Draw();
 	}
-	m_textGameName->Draw();
+	m_label->Draw();
 }
