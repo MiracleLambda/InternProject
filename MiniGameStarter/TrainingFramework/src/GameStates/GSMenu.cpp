@@ -1,8 +1,12 @@
 #include "GSMenu.h"
-#include <mmsystem.h>
-#include <mciapi.h>
-#pragma comment(lib, "winmm.lib")
+#include "../soloud20200207/include/soloud.h"
+#include "../soloud20200207/include/soloud_wav.h"
 #include "Camera.h"
+
+using namespace SoLoud;
+
+Soloud mnSoloud; // SoLoud engine
+Wav mnWave;      // One wave file
 
 GSMenu::GSMenu() : GameStateBase(StateType::STATE_MENU),
 m_background(nullptr), m_listButton(std::list<std::shared_ptr<GameButton>>{}), m_title(nullptr)
@@ -18,8 +22,14 @@ GSMenu::~GSMenu()
 
 void GSMenu::Init()
 {
-	mciSendString("open \"D:/Lambda/GL Intern Project/InternProject/MiniGameStarter/Data/Music/retrosoul.mp3\" type mpegvideo alias mp3", NULL, 0, NULL);
-	mciSendString("play mp3", NULL, 0, NULL);
+	// =========================================================================================
+	mnSoloud.init(); // Initialize SoLoud
+	mnWave.load("../Data/Music/retrosoul.wav"); // Load a wave
+	mnWave.setLooping(1);
+	mnWave.setVolume(0.3);
+	mnSoloud.play(mnWave); // Play the wave
+	// =========================================================================================
+
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D.nfg");
 	auto texture = ResourceManagers::GetInstance()->GetTexture("bg_main_menu.tga");
 

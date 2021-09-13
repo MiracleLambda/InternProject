@@ -296,6 +296,12 @@
     <ProjectReference Include="..\freetype\builds\windows\vc2019\freetype.vcxproj">
       <Project>{78b079bd-9fc7-4b9e-b4a6-96da0f00248b}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\soloud20200207\build\vs2017\SoloudDynamic.vcxproj">
+      <Project>{40064f81-acc6-cab7-7501-1435e1800f94}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\soloud20200207\build\vs2017\SoloudStatic.vcxproj">
+      <Project>{83540317-6fb7-92bb-183d-cb71047f5e3e}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Utilities\Utilities.vcxproj">
       <Project>{0d44529e-f7dd-4454-8ead-9afd857f53b4}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>

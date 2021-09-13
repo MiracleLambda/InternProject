@@ -11,9 +11,15 @@
 #include "GameButton.h"
 #include "Guest.h"
 #include "MainChar.h"
+#include "../soloud20200207/include/soloud.h"
+#include "../soloud20200207/include/soloud_wav.h"
 #include <string>
 #include <iostream>
-using namespace std;
+
+using namespace SoLoud;
+
+Soloud pSoloud; // SoLoud engine
+Wav pWave;      // One wave file
 
 GSPlay::GSPlay()
 {
@@ -26,6 +32,12 @@ GSPlay::~GSPlay()
 
 void GSPlay::Init()
 {
+	// =========================================================================================
+	pSoloud.init(); // Initialize SoLoud
+	pWave.load("../Data/Music/clang.wav"); // Load a wave
+	pWave.setVolume(1);
+	// =========================================================================================
+
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D.nfg");
 	auto texture = ResourceManagers::GetInstance()->GetTexture("bg_play0.tga");
 
@@ -54,7 +66,7 @@ void GSPlay::Init()
 	// score
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("BlackCloverFont.ttf");
-	m_score = std::make_shared<Text>(shader, font, "Score: " + to_string(score), TextColor::BLACK, 2.0f);
+	m_score = std::make_shared<Text>(shader, font, "Score: " + std::to_string(score), TextColor::BLACK, 2.0f);
 	m_score->Set2DPosition(Vector2(20, 60));
 
 	// life label
@@ -153,7 +165,8 @@ void GSPlay::UpdateScore(int pnt)
 	auto shader = ResourceManagers::GetInstance()->GetShader("TextShader");
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("BlackCloverFont.ttf");
 	score += pnt;
-	m_score = std::make_shared<Text>(shader, font, "Score: " + to_string(score), TextColor::BLACK, 2.0f);
+	pSoloud.play(pWave);
+	m_score = std::make_shared<Text>(shader, font, "Score: " + std::to_string(score), TextColor::BLACK, 2.0f);
 	m_score->Set2DPosition(Vector2(20, 60));
 }
 
@@ -320,7 +333,6 @@ void GSPlay::Update(float deltaTime)
 					it->m_velocity.x = 0;
 					it->m_velocity.y = 0;
 					UpdateScore(it->m_point);
-					it->~Guest();
 					break;
 				}
 			}
@@ -339,7 +351,6 @@ void GSPlay::Update(float deltaTime)
 					it->m_velocity.x = 0;
 					it->m_velocity.y = 0;
 					UpdateScore(it->m_point);
-					it->~Guest();
 					break;
 				}
 			}
@@ -358,7 +369,6 @@ void GSPlay::Update(float deltaTime)
 					it->m_velocity.x = 0;
 					it->m_velocity.y = 0;
 					UpdateScore(it->m_point);
-					
 					break;
 				}
 			}
