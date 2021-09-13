@@ -38,7 +38,6 @@ int ScoreManager::CalculateHighScore(int sc)
 		return sc;
 	}
 	else return tmp;
-
 }
 
 

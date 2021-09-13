@@ -320,6 +320,7 @@ void GSPlay::Update(float deltaTime)
 					it->m_velocity.x = 0;
 					it->m_velocity.y = 0;
 					UpdateScore(it->m_point);
+					it->~Guest();
 					break;
 				}
 			}
@@ -338,6 +339,7 @@ void GSPlay::Update(float deltaTime)
 					it->m_velocity.x = 0;
 					it->m_velocity.y = 0;
 					UpdateScore(it->m_point);
+					it->~Guest();
 					break;
 				}
 			}
@@ -356,6 +358,7 @@ void GSPlay::Update(float deltaTime)
 					it->m_velocity.x = 0;
 					it->m_velocity.y = 0;
 					UpdateScore(it->m_point);
+					
 					break;
 				}
 			}
