@@ -75,14 +75,14 @@
     <ClCompile Include="src\GameObject\Guest.cpp">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="MainChar.cpp">
-      <Filter>TrainingFramework\src\GameObject</Filter>
-    </ClCompile>
     <ClCompile Include="src\GameStates\GSEndgame.cpp">
       <Filter>TrainingFramework\src\GameStates</Filter>
     </ClCompile>
     <ClCompile Include="src\GameManager\ScoreManager.cpp">
       <Filter>TrainingFramework\src\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameObject\MainChar.cpp">
+      <Filter>TrainingFramework\src\GameObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
