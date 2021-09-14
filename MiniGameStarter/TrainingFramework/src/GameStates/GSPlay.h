@@ -31,7 +31,7 @@ public:
 
 	void	GenerateGuest();
 	void	UpdateScore(int pnt);
-	int		UpdateLife();
+	void	UpdateLife();
 
 private:
 	std::shared_ptr<Sprite2D>	m_background;

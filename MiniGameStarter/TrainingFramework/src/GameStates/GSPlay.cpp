@@ -170,7 +170,7 @@ void GSPlay::UpdateScore(int pnt)
 	m_score->Set2DPosition(Vector2(20, 60));
 }
 
-int GSPlay::UpdateLife()
+void GSPlay::UpdateLife()
 {
 	for (auto it : m_listGuest)
 	{
